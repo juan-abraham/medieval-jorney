@@ -1,0 +1,12 @@
+body {
+  background-image: url("/img/papel-antiguo.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#navbar-container {
+  justify-content: space-between;
+}
+.container {
+  max-width: 100%;
+}
