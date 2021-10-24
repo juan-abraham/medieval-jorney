@@ -1,8 +1,7 @@
-const articulos = [{ id: 1,  product: "Cerveza", style: "Scotish", cost: 100 },
-                  {  id: 2,  product: "Cerveza", style: "Honey", cost: 100 },
-                  {  id: 3,  product: "Cerveza" , style: "Porter", cost: 100 },
-                  {  id: 4,  product: "Cerveza", style: "Pilsener", cost: 100 },
-                  {  id: 5,  product: "Hidromiel", style: "Seca", cost: 120 },
+const articulos = [{ id: 1,  product: "Cerveza", style: "Scotish", cost: 100, img: "img/scotish-etiqueta.jpg" },
+                  {  id: 2,  product: "Cerveza", style: "Coffee", cost: 100, img: "img/coffee.jpg" },
+                  {  id: 3,  product: "Cerveza" , style: "Blonde", cost: 100, img: "img/blonde-etiqueta.jpg" },
+                  {  id: 4,  product: "Hidromiel", style: "Seca", cost: 120, img: "img/hidromiel-etiqueta.jpg" }, 
                 ];
 
 function showStyles() { // MUESTRA LOS ESTILOS DE CERVEZA DISPONIBLE y DEVUELVE POR CONSOLA LA INFORMACION DE ESA CERVEZA 
@@ -31,6 +30,23 @@ articulos.sort(function(a, b) {
         return 0
 } });  
 
+// DESAFIO 7 - DEBERIA CREAR UN P Y PONER LA RECOMENDACIÓN 
+function tipBeer() {
+
+let tipOff = true;
+let tip = document.createElement("p");
+
+if (tipOff) {  
+    tip.innerHTML = "Nuestra recomendación medieval es: Scotish";
+    tipOff = false;
+} else {
+    tip.parentNode.removeChild(tip);
+    tipOff = true;
+}
+
+
+    
+}
 
 
 
