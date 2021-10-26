@@ -133,3 +133,33 @@ function showAlcoholForEachBeer() {
     countBeerApear = true; //NO SE ESTARIA DESAPARECIENDO
   }
 }
+// EJERCICIO 9 PARTE DOS HTML ARRAY Y DOM
+
+let showArray = "";
+for (let i = 0; i < articulos.length; i++) {
+  let beer = articulos[i];
+
+  showArray +=
+    `<div class="col">
+    <div class="card">
+      <div class="card-header">
+        <h1>` +
+    beer.style +
+    `</h1> 
+      </div>
+      <div class="card-body">
+        <p class="card-text">
+        Disfruta una excelente ` +
+    beer.product +
+    ` 
+        a un precio de $ ` +
+    beer.cost +
+    `
+        </p>
+        <a href="#" class="btn btn-outline-dark">Comprar</a>
+      </div>
+    </div>
+  </div>`;
+
+  document.getElementById("spaceToArray").innerHTML = showArray;
+}
