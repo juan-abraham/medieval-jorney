@@ -1,5 +1,8 @@
+* {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
 body {
-  background-image: url("/img/papel-antiguo.jpg");
+  background-image: url("/img/fondos/fondo-medieval-bueno.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
@@ -13,4 +16,17 @@ body {
   width: 500px;
   height: 350px;
   margin: 0 auto;
+}
+.carousel-inner .item img {
+  object-fit: scale-down;
+  height: 50vh;
+  width: 100%;
+}
+
+.inVisible {
+  display: none;
+}
+
+.visible {
+  display: block;
 }
