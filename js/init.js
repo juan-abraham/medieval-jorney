@@ -41,7 +41,9 @@ function showAlcohol() {
   let beer = prompt("cuantas cervezas pensas tomar tomar?");
   for (let i = 0; i <= beer; i++) {
     alert(
-      `Al tomar ${i} cerveza/s, tendrás en sangre ${i * 0.5} gramos de alcohol`
+      `Al tomar ${beer} cerveza/s, tendrás en sangre ${
+        beer * 0.5
+      } gramos de alcohol`
     );
   }
   if (beer > 2) {
@@ -82,10 +84,10 @@ let tipOff2 = true;
 function tipBeer2() {
   var c = document.querySelector("#tip2");
   if (tipOff2) {
-    b.setAttribute("display", "block");
+    c.setAttribute("style", "display: block");
     tipOff2 = false;
   } else {
-    b.setAttribute("display", "none");
+    c.setAttribute("style", "display: none");
     tipOff2 = true;
   }
 }
@@ -95,10 +97,39 @@ let tipOff3 = true;
 function tipBeer3() {
   var d = document.querySelector("#tip3");
   if (tipOff3) {
-    d.className("inVisible");
+    d.className = "inVisible";
     tipOff3 = false;
   } else {
-    d.className("visible");
+    d.className = "visible";
     tipOff3 = true;
+  }
+}
+
+/* EJERCICIO  9  HACER UN EVENTO */
+//*
+//*
+/* DEBERIA APRETAR EL BOTON Y EN UN P PONER EL RESULTADO DE LA FUNCION showAlcohol */
+
+let showAlcoholForBeer = document.getElementById("alcoholBeer");
+showAlcoholForBeer.addEventListener("click", showAlcohol);
+
+// AHORA USANDO EL INPUT Y DEVOLVIENDO RESULTADO EN UN TEXTO
+
+let showAlcoholForPint = document.getElementById("alcoholBeer2");
+showAlcoholForPint.addEventListener("click", showAlcoholForEachBeer);
+
+function showAlcoholForEachBeer() {
+  let howManyBeer = document.getElementById("beerCount").value;
+  let countBeerApear = true;
+  let tip = document.getElementById("tipBeerCount");
+
+  if (countBeerApear) {
+    tip.innerHTML = `Al tomar ${howManyBeer} cerveza/s, tendrás en sangre ${
+      howManyBeer * 0.5
+    } gramos de alcohol`;
+    countBeerApear = false;
+  } else {
+    tip.innerHTML = "";
+    countBeerApear = true; //NO SE ESTARIA DESAPARECIENDO
   }
 }

@@ -60,8 +60,8 @@
         </li>
       </ul>
       <!-- BOTONES FUNCIONALES -->
-      <button onclick="showStyles()">Estilos</button>
-      <button onclick="showAlcohol()">Alcohol</button>
+      <button id="alcoholBeer">Alcohol por Cerveza</button>
+      <button id="alcoholBeer2">Alcohol</button>
       <button onclick="tipBeer()">Recomendación</button>
       <button onclick="tipBeer2()">Recomendación2</button>
       <button onclick="tipBeer3()">Recomendación3</button>
@@ -78,6 +78,17 @@
     </div>
   </nav>
   <!-- FIN DE HEADER -->
+  <div class="container">
+    <div>
+      <form>
+        <label for="beerCount">
+          Contador de Cervezas
+          <input type="number" id="beerCount" />
+        </label>
+      </form>
+      <h1 id="tipBeerCount"></h1>
+    </div>
+  </div>
   <!-- ESPACIO PARA RECOMENDACIÓN -->
   <h1 id="tip"></h1>
   <h2 id="tip2">La Recomendación es Coffe Bear</h2>
