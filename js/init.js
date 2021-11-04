@@ -1,42 +1,11 @@
-const articulos = [
-  {
-    id: 1,
-    product: "Cerveza",
-    style: "Scotish",
-    cost: 100,
-    img: "img/scotish-etiqueta.jpg",
-  },
-  {
-    id: 2,
-    product: "Cerveza",
-    style: "Coffee",
-    cost: 100,
-    img: "img/coffee.jpg",
-  },
-  {
-    id: 3,
-    product: "Cerveza",
-    style: "Blonde",
-    cost: 100,
-    img: "img/blonde-etiqueta.jpg",
-  },
-  {
-    id: 4,
-    product: "Hidromiel",
-    style: "Seca",
-    cost: 120,
-    img: "img/hidromiel-etiqueta.jpg",
-  },
-];
-
-function showStyles() {
+/* function showStyles() {
   // MUESTRA LOS ESTILOS DE CERVEZA DISPONIBLE y DEVUELVE POR CONSOLA LA INFORMACION DE ESA CERVEZA
   let beerStyle = prompt("Tenemos: Scotish-Honey-Porter-Pilsener-Seca");
   const findBeer = articulos.find((product) => product.style === beerStyle);
   console.log(findBeer);
-}
+} */
 
-function showAlcohol() {
+/* function showAlcohol() {
   // MUESTRA LOS GRADOS DE ALCOHOL DEPENIENDO DE CUANTAS CERVEZAS TOMES
   let beer = prompt("cuantas cervezas pensas tomar tomar?");
   for (let i = 0; i <= beer; i++) {
@@ -64,11 +33,11 @@ articulos.sort(function (a, b) {
   } else {
     return 0;
   }
-});
+}); */
 
 // DESAFIO 7 - DEBERIA CREAR UN P Y PONER LA RECOMENDACIÓN
 
-let tipOff = true;
+/* let tipOff = true;
 function tipBeer() {
   let tip = document.getElementById("tip");
 
@@ -90,10 +59,10 @@ function tipBeer2() {
     c.setAttribute("style", "display: none");
     tipOff2 = true;
   }
-}
+} */
 
 /* document.querySelector("img#profile").style.display = "none"; */
-let tipOff3 = true;
+/* let tipOff3 = true;
 function tipBeer3() {
   var d = document.querySelector("#tip3");
   if (tipOff3) {
@@ -103,19 +72,19 @@ function tipBeer3() {
     d.className = "visible";
     tipOff3 = true;
   }
-}
+} */
 
 /* EJERCICIO  9  HACER UN EVENTO */
 //*
 //*
 /* DEBERIA APRETAR EL BOTON Y EN UN P PONER EL RESULTADO DE LA FUNCION showAlcohol */
 
-let showAlcoholForBeer = document.getElementById("alcoholBeer");
+/* let showAlcoholForBeer = document.getElementById("alcoholBeer");
 showAlcoholForBeer.addEventListener("click", showAlcohol);
-
+ */
 // AHORA USANDO EL INPUT Y DEVOLVIENDO RESULTADO EN UN TEXTO
 
-let showAlcoholForPint = document.getElementById("alcoholBeer2");
+/* let showAlcoholForPint = document.getElementById("alcoholBeer2");
 showAlcoholForPint.addEventListener("click", showAlcoholForEachBeer);
 
 function showAlcoholForEachBeer() {
@@ -132,30 +101,27 @@ function showAlcoholForEachBeer() {
     tip.innerHTML = "";
     countBeerApear = true; //NO SE ESTARIA DESAPARECIENDO
   }
-}
+} */
 // EJERCICIO 9 PARTE DOS HTML ARRAY Y DOM
 
-let showArray = "";
+/* let showArray = "";
 for (let i = 0; i < articulos.length; i++) {
   let beer = articulos[i];
 
-  showArray +=
-    `<div class="col">
+  showArray += `<div class="col">
     <div class="card">
       <div class="card-header">
-        <h1>` +
-    beer.style +
-    `</h1> 
+        <h1>
+    ${beer.style}</h1> 
       </div>
       <div class="card-body">
         <p class="card-text">
-        Disfruta una excelente ` +
-    beer.product +
-    ` 
-        a un precio de $ ` +
-    beer.cost +
-    `
-        </p>
+        Disfruta una excelente 
+        ${beer.product} 
+    
+        a un precio de $ 
+        ${beer.cost}
+          </p>
         <a href="#" class="btn btn-outline-dark">Comprar</a>
       </div>
     </div>
@@ -163,3 +129,4 @@ for (let i = 0; i < articulos.length; i++) {
 
   document.getElementById("spaceToArray").innerHTML = showArray;
 }
+ */

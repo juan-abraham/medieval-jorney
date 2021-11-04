@@ -12,15 +12,10 @@ body {
   justify-content: space-between;
 }
 
-#carouselExampleIndicators {
+.carouselExampleDark {
+  height: 300px;
   width: 500px;
-  height: 350px;
   margin: 0 auto;
-}
-.carousel-inner .item img {
-  object-fit: scale-down;
-  height: 50vh;
-  width: 100%;
 }
 
 .inVisible {
@@ -29,4 +24,23 @@ body {
 
 .visible {
   display: block;
+}
+
+#spaceToArray {
+  width: 500px;
+}
+
+.principal {
+  margin-top: 2%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.tituloPrincipal {
+  font-size: 6rem;
+  color: brown;
+  margin-bottom: 0;
+  -webkit-text-stroke: 2px black;
+  font-weight: bold;
 }
