@@ -1,13 +1,12 @@
 /* CONSTANTES PARA IR UTILIZNDO A LO LARGO DEL CARRO */
-
-const arrayProduct = [];
 const cartArray = [];
+const arrayProduct = [];
 
 /* FUNCIONES PARA EL CARRITO */
 
 /* Agregar al carrito */
 function addCart(id) {
-  const product = arrayProduct.find((item) => item.id == id);
+  const product = articulos.find((item) => item.id == id); // puse ahora 'articulos' en vez de el array vacio, pero noestoy seguro que funcione
   const storageArray = JSON.parse(localStorage.getItem("cart")) || [];
   storageArray.push(product);
   localStorage.setItem("cart", JSON.stringify(storageArray));
@@ -39,7 +38,7 @@ function showCart() {
         a un precio de $ 
         ${beer.cost}
           </p>
-        <a href="#" class="btn btn-outline-dark buy">Comprar</a>
+          <button id="${beer.id}" class="btn btn-primary buy">Comprar</button>
       </div>
     </div>
   </div>`;
