@@ -130,3 +130,8 @@ for (let i = 0; i < articulos.length; i++) {
   document.getElementById("spaceToArray").innerHTML = showArray;
 }
  */
+
+// INCORPORAR JQUERY AL PROYECTO
+$("#showProduct").on("click", function () {
+  $(".container").slideToggle(); // probe para sacar el catalogo solamente, con #cart, .product, solo me funciono con la clase container...
+});

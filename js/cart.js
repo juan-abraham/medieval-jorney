@@ -24,7 +24,7 @@ function showCart() {
   let itemCart = "";
   for (let beer of cartFromStorage) {
     itemCart += `
-        <div class="col">
+        <div class="col product">
     <div class="card">
       <div class="card-header">
         <h1>
@@ -38,7 +38,7 @@ function showCart() {
         a un precio de $ 
         ${beer.cost}
           </p>
-          <button id="${beer.id}" class="btn btn-primary buy">Comprar</button>
+          <button id="${beer.id}" class="btn btn-primary get-out-btn">Cancelar</button>
       </div>
     </div>
   </div>`;
@@ -48,7 +48,7 @@ function showCart() {
 
 /* GUARDAR LA COMPRA EN STORAGE  */
 
-const btnBuy = document.getElementsByClassName("buy");
+const btnBuy = document.getElementsByClassName("buybtn");
 
 for (const btn of btnBuy) {
   btn.addEventListener("click", (event) => {

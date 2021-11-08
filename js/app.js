@@ -49,7 +49,7 @@ for (let i = 0; i < articulos.length; i++) {
         a un precio de $ 
         ${beer.cost}
           </p>
-        <a href="#" class="btn btn-outline-dark buy">Comprar</a>
+         <button id="${beer.id}" class="btn btn-danger buybtn">Comprar</button>
       </div>
     </div>
   </div>`;
