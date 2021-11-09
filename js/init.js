@@ -135,3 +135,21 @@ for (let i = 0; i < articulos.length; i++) {
 $("#showProduct").on("click", function () {
   $(".container").slideToggle(); // probe para sacar el catalogo solamente, con #cart, .product, solo me funciono con la clase container...
 });
+
+// INCORPORAR ANIMACIONES CONCATENADAS
+
+// la idea es que al marcar que uno es menor, aparezca un parrafo y se quite el catalogo
+
+function isOld() {
+  var oldOrTeen = $("input[name=radio_button_age]:checked").val();
+
+  if (oldOrTeen === false) {
+    $(".container").hide();
+    $("body").text("No puedes ver esta página siendo menor");
+    console.log("prueba ");
+  }
+}
+isOld();
+// No hay errores en consola, lo que intenté hacer fue crear unafunciión que al detectar que esta puesto en "no"
+// que tiene valor false, haga que la clase container desaparezca y aparezca en body el texto puesto
+// puse en consola prueba, pero no aparece al marcar

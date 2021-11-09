@@ -2,7 +2,7 @@
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 body {
-  background-image: url("/img/fondos/fondo-medieval-bueno.jpg");
+  background-image: url("../img/fondos/fondo-medieval-bueno.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
