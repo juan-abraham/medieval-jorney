@@ -133,23 +133,26 @@ for (let i = 0; i < articulos.length; i++) {
 
 // INCORPORAR JQUERY AL PROYECTO
 $("#showProduct").on("click", function () {
-  $(".container").slideToggle(); // probe para sacar el catalogo solamente, con #cart, .product, solo me funciono con la clase container...
+  $("#spaceToArray").slideToggle(); // probe para sacar el catalogo solamente, con #cart, .product, solo me funciono con la clase container...
 });
 
 // INCORPORAR ANIMACIONES CONCATENADAS
+// La idea será hacer aparecer el h1 con el titulo, y una breve descripción de la emprea, unos segundos más tarde, mediante
+// la utilización de display, al apretar un boton de quién somos ?
 
-// la idea es que al marcar que uno es menor, aparezca un parrafo y se quite el catalogo
+$("#showOurInfo").click(() => {
+  $("#fistTitule").fadeIn(4000);
+  $("#aboutUs").slideDown(4000).delay(7000).slideUp(4000);
+});
 
-function isOld() {
-  var oldOrTeen = $("input[name=radio_button_age]:checked").val();
-
-  if (oldOrTeen === false) {
-    $(".container").hide();
-    $("body").text("No puedes ver esta página siendo menor");
-    console.log("prueba ");
-  }
-}
-isOld();
-// No hay errores en consola, lo que intenté hacer fue crear unafunciión que al detectar que esta puesto en "no"
-// que tiene valor false, haga que la clase container desaparezca y aparezca en body el texto puesto
-// puse en consola prueba, pero no aparece al marcar
+// INTENTE HACER QUE PRIMERO SE MUESTRE EL TITULO Y 1 SEGUNDO DESPUES COMIENCE A APARECER EL PARRAFO, PERONO LOGRE HACERLO,
+// EN LA DOCUMENTACION NO ENCONTRE SI SE PUEDE CONCATENAR 2 EVENTOS MEDIANTE DELAY DE VARIAS COSAS
+/* $("#showOurInfo").click(() => {
+  $("#fistTitule")
+    .fadeIn(4000)
+    .delay(1000);
+    $("#aboutUs")
+    .slideDown(4000)
+    .delay(7000)
+    .slideUp(4000);
+}); */
