@@ -1,6 +1,5 @@
 /* CONSTANTES PARA IR UTILIZNDO A LO LARGO DEL CARRO */
 const cartArray = [];
-const arrayProduct = [];
 
 /* FUNCIONES PARA EL CARRITO */
 
@@ -13,6 +12,30 @@ function addCart(id) {
 }
 
 /* Borrar del carrito  */
+function cleanCart(id) {
+  const product = JSON.parse(localStorage.getItem("cart"));
+  const indexProduct = product.findIndex((e) => e.id == id);
+  if (indexProduct >= 0) {
+    product.splice(indexProduct, 1);
+    localStorage.setItem("cart", JSON.stringify(product));
+    return `producto con id ${id} borrado del carrito`;
+  } else {
+    return "Error al borrar, no coincide el id";
+  }
+}
+
+const cartClean = document.getElementsByClassName("clean-btn");
+
+//boton comprar, itero el array de botones y le pongo el evento al botón
+for (const btn of cartClean) {
+  btn.addEventListener("click", (event) => {
+    const idProduct = event.target.id;
+    // aca ejecutamos una función para agregar al carrito
+
+    cleanCart(idProduct);
+    showCart();
+  });
+}
 
 /* MOSTRAR EN PANTALLA */
 
@@ -38,7 +61,7 @@ function showCart() {
         a un precio de $ 
         ${beer.cost}
           </p>
-          <button id="${beer.id}" class="btn btn-primary get-out-btn">Cancelar</button>
+          <button id="${beer.id}" class="btn btn-primary clean-btn">Cancelar</button>
       </div>
     </div>
   </div>`;
@@ -46,6 +69,13 @@ function showCart() {
   document.getElementById("cart").innerHTML = itemCart;
 }
 
+/* Para que el carrito este cargado siempre en el MODAL */
+
+const showCartModal = JSON.parse(localStorage.getItem("cart"));
+
+if (showCartModal) {
+  showCart();
+}
 /* GUARDAR LA COMPRA EN STORAGE  */
 
 const btnBuy = document.getElementsByClassName("buybtn");

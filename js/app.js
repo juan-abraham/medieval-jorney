@@ -3,7 +3,7 @@ const articulos = [
   {
     id: 1,
     product: "Cerveza",
-    style: "IPA",
+    style: "Scotish",
     cost: 100,
     img: "img/scotish-etiqueta.jpg",
   },
