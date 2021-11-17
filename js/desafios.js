@@ -152,3 +152,45 @@ $("#showOurInfo").click(() => {
     $("#aboutUs").slideDown(4000).delay(7000).slideUp(4000);
   });
 });
+
+// APIS
+// Intenté armar una api, pero no lo logré https://my-json-server.typicode.com/juan-abraham/beerApi
+// Entonces voy a usar un JSON que descargué de un git
+
+const apiBeer =
+  "https://github.com/yodelis/ejemplo-de-api-1/blob/master/cervezas.json";
+
+let contenido = "";
+
+document.addEventListener("DOMContentLoaded", function (e) {
+  fetch(apiBeer) //enlazo con la api cerveza
+    .then((resp) => resp.json()) // convierto a JSON por las dudas
+
+    .then((beer) => {
+      for (let i = 0; i < beer.data.length; i++) {
+        let allBeer = beer.data[i];
+        contenido += `<div class="col">
+    <div class="card">
+      <div class="card-header">
+        <h1>
+    ${allBeer.Nombre}</h1> 
+      </div>
+      <div class="card-body">
+        <p class="card-text">
+        ${allBeer.Descripción} 
+    
+        a un precio de  
+        ${allBeer.Precio}
+          </p>
+         
+      </div>
+    </div>
+  </div>`;
+      }
+      document.getElementById("apiBeer").innerHTML = contenido;
+    });
+});
+
+$("#api").on("click", function () {
+  $("#apiBeer").fadeIn(5000);
+});
