@@ -140,19 +140,15 @@ $("#showProduct").on("click", function () {
 // La idea será hacer aparecer el h1 con el titulo, y una breve descripción de la emprea, unos segundos más tarde, mediante
 // la utilización de display, al apretar un boton de quién somos ?
 
-$("#showOurInfo").click(() => {
+/* $("#showOurInfo").click(() => {
   $("#fistTitule").fadeIn(4000);
   $("#aboutUs").slideDown(4000).delay(7000).slideUp(4000);
-});
+}); */
 
 // INTENTE HACER QUE PRIMERO SE MUESTRE EL TITULO Y 1 SEGUNDO DESPUES COMIENCE A APARECER EL PARRAFO, PERONO LOGRE HACERLO,
 // EN LA DOCUMENTACION NO ENCONTRE SI SE PUEDE CONCATENAR 2 EVENTOS MEDIANTE DELAY DE VARIAS COSAS
-/* $("#showOurInfo").click(() => {
-  $("#fistTitule")
-    .fadeIn(4000)
-    .delay(1000);
-    $("#aboutUs")
-    .slideDown(4000)
-    .delay(7000)
-    .slideUp(4000);
-}); */
+$("#showOurInfo").click(() => {
+  $("#fistTitule").fadeIn(4000, function () {
+    $("#aboutUs").slideDown(4000).delay(7000).slideUp(4000);
+  });
+});
