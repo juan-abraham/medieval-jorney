@@ -157,8 +157,7 @@ $("#showOurInfo").click(() => {
 // Intenté armar una api, pero no lo logré https://my-json-server.typicode.com/juan-abraham/beerApi
 // Entonces voy a usar un JSON que descargué de un git
 
-const apiBeer =
-  "https://github.com/yodelis/ejemplo-de-api-1/blob/master/cervezas.json";
+const apiBeer = "/basedatos/db.json";
 
 let contenido = "";
 

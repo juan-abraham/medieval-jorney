@@ -5,7 +5,7 @@ const cartArray = [];
 
 /* Agregar al carrito */
 function addCart(id) {
-  const product = articulos.find((item) => item.id == id); // puse ahora 'articulos' en vez de el array vacio, pero noestoy seguro que funcione
+  const product = articulos.find((item) => item.id == id); 
   const storageArray = JSON.parse(localStorage.getItem("cart")) || [];
   storageArray.push(product);
   localStorage.setItem("cart", JSON.stringify(storageArray));
@@ -22,19 +22,6 @@ function cleanCart(id) {
   } else {
     return "Error al borrar, no coincide el id";
   }
-}
-
-const cartClean = document.getElementsByClassName("clean-btn");
-
-//boton comprar, itero el array de botones y le pongo el evento al botón
-for (const btn of cartClean) {
-  btn.addEventListener("click", (event) => {
-    const idProduct = event.target.id;
-    // aca ejecutamos una función para agregar al carrito
-
-    cleanCart(idProduct);
-    showCart();
-  });
 }
 
 /* MOSTRAR EN PANTALLA */
@@ -67,6 +54,16 @@ function showCart() {
   </div>`;
   }
   document.getElementById("cart").innerHTML = itemCart;
+
+  const cartClean = document.getElementsByClassName("clean-btn");
+
+  for (const btn of cartClean) {
+    btn.addEventListener("click", (event) => {
+      const idProduct = event.target.id;
+      cleanCart(idProduct);
+      showCart();
+    });
+  }
 }
 
 /* Para que el carrito este cargado siempre en el MODAL */
