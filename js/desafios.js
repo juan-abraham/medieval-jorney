@@ -166,8 +166,8 @@ document.addEventListener("DOMContentLoaded", function (e) {
     .then((resp) => resp.json()) // convierto a JSON por las dudas
 
     .then((beer) => {
-      for (let i = 0; i < beer.data.length; i++) {
-        let allBeer = beer.data[i];
+      for (let i = 0; i < beer.ingredients.length; i++) {
+        let allBeer = beer.ingredients[i];
         contenido += `<p> HISTORIA DE LA CERVEZA : ${allBeer.strDescription}`;
       }
       document.getElementById("apiBeer").innerHTML = contenido;
