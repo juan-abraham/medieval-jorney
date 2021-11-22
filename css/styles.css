@@ -44,3 +44,8 @@ body {
   -webkit-text-stroke: 2px black;
   font-weight: bold;
 }
+
+.imgModal {
+  height: 60%;
+  width: 60%;
+}

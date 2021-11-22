@@ -5,28 +5,32 @@ const articulos = [
     product: "Cerveza",
     style: "Scotish",
     cost: 100,
-    img: "img/scotish-etiqueta.jpg",
+    img: "../img/etiquetas/scotish-etiqueta.jpg",
+    quantity: 0,
   },
   {
     id: 2,
     product: "Cerveza",
     style: "Coffee",
     cost: 100,
-    img: "img/coffee.jpg",
+    img: "../img/etiquetas/coffee.jpg",
+    quantity: 0,
   },
   {
     id: 3,
     product: "Cerveza",
     style: "Blonde",
     cost: 100,
-    img: "img/blonde-etiqueta.jpg",
+    img: "../img/etiquetas/blonde-etiqueta.jpg",
+    quantity: 0,
   },
   {
     id: 4,
     product: "Hidromiel",
     style: "Seca",
     cost: 120,
-    img: "img/hidromiel-etiqueta.jpg",
+    img: "../img/etiquetas/hidromiel-etiqueta.jpg",
+    quantity: 0,
   },
 ];
 
@@ -38,6 +42,7 @@ for (let i = 0; i < articulos.length; i++) {
   showArray += `<div class="col">
     <div class="card">
       <div class="card-header">
+      <img src=${beer.img} class="imgModal"/>
         <h1>
     ${beer.style}</h1> 
       </div>

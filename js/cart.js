@@ -5,9 +5,18 @@ const cartArray = [];
 
 /* Agregar al carrito */
 function addCart(id) {
-  const product = articulos.find((item) => item.id == id); 
+  const product = articulos.find((item) => item.id == id);
   const storageArray = JSON.parse(localStorage.getItem("cart")) || [];
-  storageArray.push(product);
+  const indexProduct = storageArray.findIndex((e) => e.id == id);
+  if (product.quantity === 0) {
+    product.quantity += 1;
+    storageArray.push(product);
+  } else {
+    storageArray.splice(indexProduct, 1);
+    product.quantity += 1;
+    storageArray.push(product);
+  }
+
   localStorage.setItem("cart", JSON.stringify(storageArray));
 }
 
@@ -16,6 +25,7 @@ function cleanCart(id) {
   const product = JSON.parse(localStorage.getItem("cart"));
   const indexProduct = product.findIndex((e) => e.id == id);
   if (indexProduct >= 0) {
+    product[indexProduct].quantity = 0;
     product.splice(indexProduct, 1);
     localStorage.setItem("cart", JSON.stringify(product));
     return `producto con id ${id} borrado del carrito`;
@@ -42,11 +52,11 @@ function showCart() {
       </div>
       <div class="card-body">
         <p class="card-text">
-        Disfruta una excelente 
+        Disfruta ${beer.quantity} excelente 
         ${beer.product} 
     
         a un precio de $ 
-        ${beer.cost}
+        ${beer.cost*beer.quantity}
           </p>
           <button id="${beer.id}" class="btn btn-primary clean-btn">Cancelar</button>
       </div>
@@ -62,8 +72,9 @@ function showCart() {
       const idProduct = event.target.id;
       cleanCart(idProduct);
       showCart();
+      
     });
-  }
+  } 
 }
 
 /* Para que el carrito este cargado siempre en el MODAL */
@@ -83,5 +94,20 @@ for (const btn of btnBuy) {
     console.log("agregaste producto con id", idProd);
     addCart(idProd);
     showCart();
+   
   });
+}
+// ACTUALIZAR EL PRECIO TOTAL
+
+function showTotal() {
+  let total = 0;
+  const storageArray = JSON.parse(localStorage.getItem("cart"));
+
+  for (let i = 0; i < storageArray.length; i++) {
+    const element = storageArray[i];
+    total += element.quantity * element.cost;
+  }
+  
+  console.log(total);
+  document.getElementById("totalPrice") = `<p> `+total+` <p>`;
 }
