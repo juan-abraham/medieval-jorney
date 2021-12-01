@@ -54,7 +54,13 @@ for (let i = 0; i < articulos.length; i++) {
         a un precio de $ 
         ${beer.cost}
           </p>
-         <button id="${beer.id}" class="btn btn-danger buybtn">Comprar</button>
+          <span> 
+          Cantidad: 
+          <input type="number" id="
+          ${beer.style} 
+      " value="${beer.quantity}" min = 1 onchange="addCart(${beer.id})">                  
+</span>
+         <button id="${beer.id}" class="btn btn-danger buybtn" onclick="addCart(${beer.id})">Comprar</button>
       </div>
     </div>
   </div>`;
