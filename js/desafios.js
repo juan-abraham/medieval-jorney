@@ -168,12 +168,8 @@ document.addEventListener("DOMContentLoaded", function (e) {
     .then((beer) => {
       for (let i = 0; i < beer.ingredients.length; i++) {
         let allBeer = beer.ingredients[i];
-        contenido += `<p> HISTORIA DE LA CERVEZA : ${allBeer.strDescription}`;
+        contenido += `<p> Beer´s History : ${allBeer.strDescription}`;
       }
       document.getElementById("apiBeer").innerHTML = contenido;
     });
-});
-
-$("#api").on("click", function () {
-  $("#apiBeer").fadeIn(5000);
 });

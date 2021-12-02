@@ -26,7 +26,7 @@
         <img src="img/logo/nav-bar.jpg" alt="" width="175" height="35" />
       </a>
       <button id="showProduct" class="btn btn-warning">Product</button>
-      <button id="api" class="btn btn-success">About Beer</button>
+      
       <button id="showOurInfo" class="btn btn-danger">About Us</button>
       <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
         Cart
@@ -39,16 +39,20 @@
   <div class="container">
     <h1 id="fistTitule" class="tituloPrincipal">MEDIEVAL JOURNEY</h1>
   <p id="aboutUs" class="inVisible"> 
-    Somos dos amigos que en una charla con un par de copas de más, 
-    decidieron poner su propio emprendimiento de cerveza, nos hemos capacitado tanto en cerveza como en hidromiel, 
-    y nuestra intención es llevar al cliente un sin fin de sencaciones por medio de nuestra gran varierdad de elixires
+    Medieval Journey aims to provide our clients with a spiritual journey back in the years 
+    where alcoholic beverages as we know them today were developed.
+    We have developed very good jobs and made our own recipes, which will transport you to Ancient Greece, 
+    through our different Meads, or to Medieval England through our beers.
+    We are two friends who, tired of drinking bad beer, decided to make their own, 
+    for this reason we decided to take different courses and train as Master Brewers.
   </p></div>
 
   <!-- COMIENZO DE CARROUSEL -->
   <div id="carrouselContainer">
+    
 <div class="container principal" >
   <div class="row">
-    <div class="col-6">
+    <div class="col-6" id="carrouselmove">
       <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -56,7 +60,7 @@
           <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
         <!--   <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button> -->
         </div>
-        <div class="carousel-inner">
+        <div class="carousel-inner" id="fhotoContainer">
           <div class="carousel-item active" data-bs-interval="10000">
             <img src="img/carrousel/botella-pasto-hidro.png" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
@@ -89,9 +93,7 @@
         </button>
       </div>
     </div>
-    <div class="col-6">  
-      <div id="spaceToArray" class="inVisible"></div>
-    </div>
+    <div id="spaceToArray" class="inVisible"></div>
     </div>
   </div>
 </div>
